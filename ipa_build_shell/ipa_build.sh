@@ -41,21 +41,12 @@ if [ -z "$vc_tool" ]; then
     vc_tool=""
 fi
 
-if [ "$vc_tool" = "svn" ]; then
-    #获取项目svn的最新版本号
-    code_version=`update_codeverion ${info_plist_path}`
-else
-    code_version=$vc_tool
-fi
-
 #代码更新到最新版本
 if [ $should_update_code -eq 1 ]; then
     echo "----->代码更新中..."
     code_update $vc_tool
     echo "----->代码更新完成"
 fi
-
-echo "----->代码版本：【${code_version}】"
 
 ################################################################################
 # clean, should_clean=1时进行clean
@@ -123,7 +114,7 @@ do
     for((ipa_index=0; ipa_index<${#profile_name_array[@]}; ipa_index++))
     do
         #ipa名
-        ipa_name="${project_name}_v${app_version}_${code_version}_${server_tag}_${deployment_array[$ipa_index]}.ipa"
+        ipa_name="${project_name}_v${app_version}_${server_tag}_${deployment_array[$ipa_index]}.ipa"
         #ipa文件路径
         ipa_file_path=${build_dir}${ipa_name}
         #需要上传的加入到上传数组中

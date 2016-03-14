@@ -35,21 +35,6 @@ function code_update()
 }
 
 ################################################################################
-# 更新代码版本，设置info.plist文件中的codeversion，该函数支持支svn
-#   param {1} Info.plist文件路径
-################################################################################
-function update_codeverion
-{
-    code_version=`svnversion -c |sed 's/^.*://' |sed 's/[A-Z]*$//'`
-    code_version="svn"$code_version
-
-    /usr/libexec/PlistBuddy -c "delete :CodeVersion" ${1}
-    /usr/libexec/PlistBuddy -c "add :CodeVersion String ${code_version}" ${1}
-
-    echo $code_version
-}
-
-################################################################################
 # 启用UseCmdBuild标记 （Info.plist文件）
 # 使用命令行打包时需要将UseCmdBuild设置为YES，代码中将会根据该标记和服务器标记（ServerTag）
 # 来选择服务器
