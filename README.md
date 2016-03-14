@@ -4,5 +4,6 @@
 
 
     1、将ipa_build_shell文件夹拷贝至工程根目录下
+    ![image](https://github.com/AmineChan/ipaBuildShell/blob/master/1.png)
     2、打开ipa_build_config.sh文件，根据实际情况进行配置
     3、执行./ipa_build.sh
