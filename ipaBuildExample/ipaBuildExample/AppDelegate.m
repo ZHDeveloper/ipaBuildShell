@@ -3,7 +3,7 @@
 //  ipaBuildExample
 //
 //  Created by czm on 16/3/14.
-//  Copyright © 2016年 gaodosoft. All rights reserved.
+//  Copyright © 2016年 czm. All rights reserved.
 //
 
 #import "AppDelegate.h"
